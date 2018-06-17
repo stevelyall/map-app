@@ -11,7 +11,9 @@ export class Main extends Component {
             <div className={'mainContainer'}>
                 <MainMenuBar></MainMenuBar>
                 <div className={'mapContainer'}>
-                    <Map></Map>
+                    <Map
+                        mapConfig={this.props.mapConfig}
+                    ></Map>
                 </div>
             </div>
         )

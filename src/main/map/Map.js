@@ -4,16 +4,6 @@ import './Map.css';
 
 class Map extends Component {
 
-    API_KEY = 'AIzaSyBjG2kHMAfzQjXcc7LRsdCE9Osu8cejnvw';
-    static defaultProps = {
-        center: {
-            lat: 59.95,
-            lng: 30.33
-        },
-        zoom: 11,
-        key: this.API_KEY
-    };
-
 
     render() {
         const AnyReactComponent = ({text}) => <div>{text}</div>;
@@ -23,9 +13,10 @@ class Map extends Component {
         return (
             <div className={'map'}>
                 <GoogleMapReact
-                   apiKey={Map.defaultProps.keys}
-                    defaultCenter={Map.defaultProps.center}
-                    defaultZoom={Map.defaultProps.zoom}>
+                   bootstrapURLKeys={this.props.mapConfig.apiKey}
+                    defaultCenter={this.props.mapConfig.initialCenter}
+                    defaultZoom={this.props.mapConfig.initalZoom}
+                >
                     <AnyReactComponent
                         lat={40.7473310}
                         lng={-73.8517440}
